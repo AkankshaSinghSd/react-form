@@ -3,14 +3,14 @@ import "./MultipleInput.css";
 
 const MultipleInput = () => {
   const [fullName, setFullName] = useState({
-    fname: "fname",
-    lname: "lname",
-    email: "email",
-    phoneNo: "phoneNo",
+    fname: "",
+    lname: "",
+    email: "",
+    phoneNo: "",
   });
 
   const inputHandler = (event) => {
-   const {value,name,email,phoneNo} = event.target;
+   const {value,name} = event.target;
 
     setFullName((preVal) => {
       console.log(preVal);
@@ -55,10 +55,10 @@ const MultipleInput = () => {
         <form onSubmit={onSubmitHandler}>
           <div className="eventDivMulti">
             <h1 className="h1EventMulti">
-              Hello {fullName.fname} {fullName.lname}
+              Hello {fullName.fname} {fullName.lname}  </h1>
               <p>{fullName.email}</p>
             <p>{fullName.phoneNo}</p>
-            </h1>
+          
            
             <input
               className="formInput"

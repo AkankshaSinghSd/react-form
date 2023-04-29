@@ -2,7 +2,6 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  background-color: gainsboro;
   font-family:'Times New Roman', Times, serif;
 }
 .button {
@@ -41,6 +40,7 @@ align-items: center;
   background: transparent;
   text-shadow: 0 2px 2px black;
 }
+
 
 .buttonEvent{
   padding: 12px 20px;
