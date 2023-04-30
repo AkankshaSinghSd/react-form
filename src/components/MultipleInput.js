@@ -10,40 +10,43 @@ const MultipleInput = () => {
   });
 
   const inputHandler = (event) => {
-   const {value,name} = event.target;
+    const { value, name } = event.target;
 
     setFullName((preVal) => {
       console.log(preVal);
-      if (name === "fname") {
-        return {
-          fname: value,
-          lname: preVal.lname,
-          email: preVal.email,
-          phoneNo: preVal.phoneNo,
-        };
-      } else if (name === "lname") {
-        return {
-          fname: preVal.fname,
-          lname: value,
-          email: preVal.email,
-          phoneNo: preVal.phoneNo,
-        };
-      } else if (name === "email") {
-        return {
-          fname: preVal.fname,
-          lname: preVal.lname,
-          email: value,
-          phoneNo: preVal.phoneNo,
-        };
-      } else if (name === "phoneNo") {
-        return {
-          fname: preVal.fname,
-          lname: preVal.lname,
-          email: preVal.email,
-          phoneNo: value,
-        };
-      }
+      return {...preVal,
+        [name]:value,
+      };
 
+      // if (name === "fname") {
+      //   return {
+      //     fname: value,
+      //     lname: preVal.lname,
+      //     email: preVal.email,
+      //     phoneNo: preVal.phoneNo,
+      //   };
+      // } else if (name === "lname") {
+      //   return {
+      //     fname: preVal.fname,
+      //     lname: value,
+      //     email: preVal.email,
+      //     phoneNo: preVal.phoneNo,
+      //   };
+      // } else if (name === "email") {
+      //   return {
+      //     fname: preVal.fname,
+      //     lname: preVal.lname,
+      //     email: value,
+      //     phoneNo: preVal.phoneNo,
+      //   };
+      // } else if (name === "phoneNo") {
+      //   return {
+      //     fname: preVal.fname,
+      //     lname: preVal.lname,
+      //     email: preVal.email,
+      //     phoneNo: value,
+      //   };
+      // }
     });
   };
   const onSubmitHandler = (event) => {
@@ -55,11 +58,11 @@ const MultipleInput = () => {
         <form onSubmit={onSubmitHandler}>
           <div className="eventDivMulti">
             <h1 className="h1EventMulti">
-              Hello {fullName.fname} {fullName.lname}  </h1>
-              <p>{fullName.email}</p>
+              Hello {fullName.fname} {fullName.lname}
+            </h1>
+            <p>{fullName.email}</p>
             <p>{fullName.phoneNo}</p>
-          
-           
+
             <input
               className="formInput"
               type="text"
